@@ -1,8 +1,12 @@
 from django.shortcuts import get_object_or_404, render
-from django.views import generic
+from django.views import generic, View
 
 from .forms import CommentForm
 from .models import Post
+from django.conf import settings
+from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class PostList(generic.ListView):
@@ -45,3 +49,13 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+    
+@login_required
+def my_view(request):
+    if not request.user.email.endswith('@example.com'):
+        return redirect('/login/?next=%s' % request.path)
+    if not request.user.is_authenticated:
+        return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+class MyView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'redirect_to'    
