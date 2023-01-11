@@ -59,6 +59,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
      'django.contrib.sessions.middleware.SessionMiddleware',  #Manages sessions across requests
      'django.contrib.auth.middleware.AuthenticationMiddleware',  #Associates users with requests using sessions.
+   # DEBUB TOOLBAR ON GOOGLE CHROME
    
 ]
 
@@ -122,9 +123,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ES-ES"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "europa/madrid"
 
 USE_I18N = True
 
