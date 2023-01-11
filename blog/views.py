@@ -16,7 +16,7 @@ class UserPostList(LoginRequiredMixin,  generic.ListView):
     '''Muestra los posts de un usuario en particular'''
     model = Post
     template_name = "user_posts.html"
-    paginate_by = 3
+    paginate_by = 10
 
     def get_queryset(self):
         return Post.objects.filter(author=self.request.user).order_by("-created_on")
