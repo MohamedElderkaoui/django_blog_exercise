@@ -1,5 +1,7 @@
 # Django blog exercise
 
+![GitHub CI](https://github.com/lmorillas/django_blog_exercise/actions/workflows/ci.yml/badge.svg)
+
 Fork del proyecto https://github.com/TheAbhijeet/Django_blog
 
 A blog application made on Django.
