@@ -15,7 +15,7 @@ class UrlsTestCase(TestCase):
 
     def test_urls(self):
         response = self.client.get(reverse('home'))
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 200)
 
         response = self.client.get(reverse('post_detail', kwargs={'slug': 'post-1'}))
         self.assertEqual(response.status_code, 200)
