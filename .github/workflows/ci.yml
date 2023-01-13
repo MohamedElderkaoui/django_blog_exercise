@@ -28,4 +28,5 @@ jobs:
     - name: Run Tests
       run: |
         coverage manage.py test
-
+    - name: Coverage Badge
+      uses: tj-actions/coverage-badge-py@v1.8
