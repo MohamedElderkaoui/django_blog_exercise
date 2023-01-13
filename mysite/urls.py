@@ -34,6 +34,7 @@ urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="sitemap"),
 ]
 
+# para login y logout
 urlpatterns += [
     path('accounts/', include('django.contrib.auth.urls')),
 ]
